@@ -29,6 +29,9 @@ router.route("/searchBook/:key").get( async (req, res) => {
                 }
             ]
         })
+        if(!result){
+            return res.status(204).send()
+        }
         res.status(200).json(result);
     }catch(err){
         console.log(err);
